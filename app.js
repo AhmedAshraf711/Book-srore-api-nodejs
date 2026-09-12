@@ -4,6 +4,8 @@ const logger = require('./middlewares/logger');
 const connectToDB = require('./config/db')
 const app = express();
 
+app.set('view engine','ejs');
+
 // Middleware
 app.use(express.json());
 app.use(logger);
