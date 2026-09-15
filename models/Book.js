@@ -30,6 +30,9 @@ const BookSchema = new mongoose.Schema(
       required: true,
       enum: ["soft cover", "hard cover"],
     },
+     image: {
+      type: String
+    },
   },
   { timestamps: true },
 );

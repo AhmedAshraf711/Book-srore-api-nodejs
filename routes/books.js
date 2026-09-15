@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const upload = require("./uploadImage");
 const {getAllBooks, getBookById,createBook,updateBook,deletBook} = require("../controllers/bookController");
 const {verifyTokenAdmin}= require("../middlewares/verifyToken");
 
@@ -11,7 +12,7 @@ const {verifyTokenAdmin}= require("../middlewares/verifyToken");
 
 router.route("/")
       .get(getAllBooks)
-      .post(createBook)
+      .post(upload.single("image"),createBook)
 router.route("/:id")
       .get(getBookById)
       .put(updateBook)
