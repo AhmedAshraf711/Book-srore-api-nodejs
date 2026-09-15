@@ -97,6 +97,7 @@ const createBook = asyncHandler(async (req, res) => {
     description: req.body.description,
     price: req.body.price,
     cover: req.body.cover,
+    image:req.file.filename
   });
   await book.save();
   res.status(201).json(book);
